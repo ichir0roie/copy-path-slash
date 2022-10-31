@@ -8,7 +8,7 @@
   "repository": {
     "url": "https://github.com/ichir0roie/copy-path-slash"
   },
-  "version": "1.0.0",
+  "version": "2.0.0",
   "engines": {
     "vscode": "^1.72.0"
   },

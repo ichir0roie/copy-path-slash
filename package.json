@@ -5,6 +5,7 @@
   "author": {
     "name": "ichir0roie"
   },
+  "publisher": "ichir0roie",
   "repository": {
     "url": "https://github.com/ichir0roie/copy-path-slash"
   },
@@ -16,7 +17,7 @@
     "Other"
   ],
   "activationEvents": [
-    "*"
+    "onCommand:copy-path-slash.copyPathSlash"
   ],
   "main": "./dist/extension.js",
   "contributes": {

@@ -13,8 +13,14 @@ export function activate(context: vscode.ExtensionContext) {
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('copy-path-slash.copyPathSlash', (uri: vscode.Uri) => {
-		var after = uri.fsPath;
+	let disposable = vscode.commands.registerCommand('copy-path-slash.copyPathSlash', async (uri: vscode.Uri) => {
+		var after = "";
+		if (uri === undefined) {
+			await vscode.commands.executeCommand("copyFilePath");
+			after = await vscode.env.clipboard.readText();
+		} else {
+			after = uri.fsPath;
+		}
 		after = after.split("\\").join("/");
 		vscode.env.clipboard.writeText(after);
 	});
